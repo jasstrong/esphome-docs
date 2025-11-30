@@ -32,6 +32,9 @@ sensor:
       name: PM <4µm Weight concentration
     pm_10_0:
       name: PM <10µm Weight concentration
+    aqi:
+      name: Air Quality Index
+      calculation_type: "CAQI"
     temperature:
       name: Temperature
     humidity:
@@ -63,6 +66,11 @@ sensor:
   Readings in µg/m³.
 
   - All options from [Sensor](/components/sensor).
+
+- **aqi** (*Optional*): Air Quality Index sensor. Requires both `pm_2_5` and `pm_10_0` sensors to be configured.
+
+  - **calculation_type** (**Required**): The AQI calculation standard to use. One of: `AQI` (US EPA) or `CAQI` (European).
+  - All other options from [Sensor](/components/sensor).
 
 - **auto_cleaning_interval** (*Optional*): Reads/Writes the interval in seconds of the periodic fan-cleaning.
 
